@@ -72,6 +72,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62189C3B2BE261CC0054007B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6282C3CD2BE0B7FC00573B23 /* User.swift */,
+				62189C332BE239C20054007B /* UserDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		62189C3C2BE262040054007B /* User List */ = {
+			isa = PBXGroup;
+			children = (
+				6282C3B72BE0914E00573B23 /* UserListViewTableViewController.swift */,
+				6282C3DF2BE208E600573B23 /* UserListViewModel.swift */,
+				62189C402BE262820054007B /* TableViewCell */,
+				62189C3D2BE262230054007B /* User Detail */,
+			);
+			path = "User List";
+			sourceTree = "<group>";
+		};
+		62189C3D2BE262230054007B /* User Detail */ = {
+			isa = PBXGroup;
+			children = (
+				6282C3E12BE229C400573B23 /* UserDetailViewController.swift */,
+				62189C352BE2437F0054007B /* UserDetailViewModel.swift */,
+				6282C3E22BE229C400573B23 /* UserDetailViewController.xib */,
+			);
+			path = "User Detail";
+			sourceTree = "<group>";
+		};
+		62189C3E2BE2623A0054007B /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				6282C3DD2BE2061200573B23 /* APIClient.swift */,
+				62189C372BE244130054007B /* APIClient+getUserListFromGitHub.swift */,
+				62189C392BE244780054007B /* APIClient+getUserDetail.swift */,
+			);
+			path = "API Client";
+			sourceTree = "<group>";
+		};
+		62189C3F2BE262700054007B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				62189C412BE2629D0054007B /* TableViewCell */,
+				6282C3DB2BE0E59700573B23 /* LoadingStatus.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		62189C402BE262820054007B /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6282C3CF2BE0BE7C00573B23 /* UserListTableViewCell.swift */,
+				6282C3D02BE0BE7C00573B23 /* UserListTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		62189C412BE2629D0054007B /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6282C3D72BE0DF1000573B23 /* LoadingStateTableViewCell.swift */,
+				6282C3D82BE0DF1000573B23 /* LoadingStateTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		6282C3A72BE0914E00573B23 = {
 			isa = PBXGroup;
 			children = (
@@ -93,21 +160,10 @@
 			children = (
 				6282C3B32BE0914E00573B23 /* AppDelegate.swift */,
 				6282C3B52BE0914E00573B23 /* SceneDelegate.swift */,
-				6282C3B72BE0914E00573B23 /* UserListViewTableViewController.swift */,
-				6282C3E12BE229C400573B23 /* UserDetailViewController.swift */,
-				62189C352BE2437F0054007B /* UserDetailViewModel.swift */,
-				6282C3E22BE229C400573B23 /* UserDetailViewController.xib */,
-				6282C3DF2BE208E600573B23 /* UserListViewModel.swift */,
-				6282C3CD2BE0B7FC00573B23 /* User.swift */,
-				62189C332BE239C20054007B /* UserDetail.swift */,
-				6282C3CF2BE0BE7C00573B23 /* UserListTableViewCell.swift */,
-				6282C3D72BE0DF1000573B23 /* LoadingStateTableViewCell.swift */,
-				6282C3DB2BE0E59700573B23 /* LoadingStatus.swift */,
-				6282C3DD2BE2061200573B23 /* APIClient.swift */,
-				62189C372BE244130054007B /* APIClient+getUserListFromGitHub.swift */,
-				62189C392BE244780054007B /* APIClient+getUserDetail.swift */,
-				6282C3D82BE0DF1000573B23 /* LoadingStateTableViewCell.xib */,
-				6282C3D02BE0BE7C00573B23 /* UserListTableViewCell.xib */,
+				62189C3C2BE262040054007B /* User List */,
+				62189C3B2BE261CC0054007B /* Model */,
+				62189C3F2BE262700054007B /* Shared */,
+				62189C3E2BE2623A0054007B /* API Client */,
 				6282C3B92BE0914E00573B23 /* Main.storyboard */,
 				6282C3BC2BE0915000573B23 /* Assets.xcassets */,
 				6282C3BE2BE0915000573B23 /* LaunchScreen.storyboard */,

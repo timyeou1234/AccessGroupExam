@@ -3,7 +3,7 @@ import Foundation
 
 final class UserListViewModel {
     @Published var users: [User] = []
-    @Published var status: LoadingStatus = .idle
+    @Published var status: TableViewLoadingStatus = .idle
     
     private var apiClient: APIClient
     

@@ -1,14 +1,15 @@
 import Foundation
 
-enum LoadingStatus {
+/// This enum represents the loading status of a table view
+enum TableViewLoadingStatus {
     case idle
     case hasMore
     case noMore
     case error(error: Error)
 }
 
-extension LoadingStatus: Equatable {
-    static func == (lhs: LoadingStatus, rhs: LoadingStatus) -> Bool {
+extension TableViewLoadingStatus: Equatable {
+    static func == (lhs: TableViewLoadingStatus, rhs: TableViewLoadingStatus) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle):
             return true
