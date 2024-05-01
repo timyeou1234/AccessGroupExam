@@ -16,9 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="y0I-xn-SSD">
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="y0I-xn-SSD">
                         <rect key="frame" x="150" y="12" width="20" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </activityIndicatorView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No more data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2m-nj-5Bo">
                         <rect key="frame" x="8" y="12" width="304" height="20"/>
@@ -29,10 +28,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="G2m-nj-5Bo" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="3L4-5G-ykO"/>
+                    <constraint firstItem="y0I-xn-SSD" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="41F-4K-8jc"/>
                     <constraint firstItem="G2m-nj-5Bo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="BNO-K8-E0c"/>
                     <constraint firstAttribute="trailing" secondItem="G2m-nj-5Bo" secondAttribute="trailing" constant="8" id="cVe-0Q-NCM"/>
                     <constraint firstAttribute="bottom" secondItem="G2m-nj-5Bo" secondAttribute="bottom" constant="12" id="pM1-88-UmT"/>
                     <constraint firstItem="G2m-nj-5Bo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="toB-to-Hbh"/>
+                    <constraint firstItem="y0I-xn-SSD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xXY-NE-dt0"/>
                     <constraint firstItem="G2m-nj-5Bo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="xlY-BQ-FzQ"/>
                 </constraints>
             </tableViewCellContentView>

@@ -1,56 +1,32 @@
-import UIKit
 import Alamofire
+import Combine
 import Kingfisher
+import UIKit
 
 class UserListViewTableViewController: UITableViewController {
     static let UserListTableViewCellIdentifier = "UserListTableViewCellIdentifier"
     static let LoadingStateTableViewCellIdentifier = "LoadingStateTableViewCellIdentifier"
-    var users: [User] = []
-    var loadingState: LoadingStatus = .idle
+    
+    private var viewModel = UserListViewModel(apiClient: APIClient.shared)
+    private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "UserListTableViewCell", bundle: nil), forCellReuseIdentifier: UserListViewTableViewController.UserListTableViewCellIdentifier)
         tableView.register(UINib(nibName: "LoadingStateTableViewCell", bundle: nil), forCellReuseIdentifier: UserListViewTableViewController.LoadingStateTableViewCellIdentifier)
-        // Do any additional setup after loading the view.
-        Task {
-            await fetchUserListFromGitHub(nil)
-        }
+        bindingViewModel()
+        // Get the first page of the users
+        viewModel.getUserListFromGitHub(nil)
     }
     
-    func fetchUserListFromGitHub(_ userId: Int?, perPage: Int = 20) async {
-        let headers: HTTPHeaders = [
-            "Accept": "application/json",
-            "Authorization": "Bearer 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",
-            "X-GitHub-Api-Version": "2022-11-28",
-        ]
-
-        // Automatic String to URL conversion, Swift concurrency support, and automatic retry.
-        let response = await AF.request("https://api.github.com/users", parameters: [
-            "since": userId ?? 0,
-            "per_page": perPage
-        ], headers: headers, interceptor: .retryPolicy)
-        // Automatic Decodable support with background parsing.
-            .serializingDecodable([User].self)
-        // Await the full response with metrics and a parsed body.
-            .response
-    
-        debugPrint(response)
-        switch response.result {
-        case .success(let users):
-            self.users += users
-            if users.count == perPage {
-                loadingState = .hasMore
-            } else {
-                loadingState = .noMore
-            }
-        case .failure(let error):
-            loadingState = .error(error: error)
-        }
-        await MainActor.run {
-            self.tableView.reloadData()
-        }
+    private func bindingViewModel() {
+        Publishers.CombineLatest(viewModel.$status, viewModel.$users)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.tableView.reloadData()
+            }.store(in: &cancellables)
     }
 }
 
@@ -63,7 +39,7 @@ extension UserListViewTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return users.count
+            return viewModel.users.count
         case 1:
             return 1
         default:
@@ -78,7 +54,7 @@ extension UserListViewTableViewController {
             else {
                 return UITableViewCell()
             }
-            let user = users[indexPath.row]
+            let user = viewModel.users[indexPath.row]
             cell.nameLabel.text = user.login
             cell.avatarImageView.kf.setImage(with: user.avatar_url)
             cell.badgeContainerView.isHidden = !user.site_admin
@@ -88,7 +64,7 @@ extension UserListViewTableViewController {
             else {
                 return UITableViewCell()
             }
-            cell.setLoadingStaus(loadingState)
+            cell.setLoadingStatus(viewModel.status)
             return cell
         default:
             return UITableViewCell()
@@ -96,10 +72,8 @@ extension UserListViewTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 && indexPath.row == 0 && loadingState == .hasMore {
-            Task {
-                await fetchUserListFromGitHub(users.last?.id)
-            }
+        if indexPath.section == 1 && indexPath.row == 0 && viewModel.status == .hasMore {
+            viewModel.getUserListFromGitHub(viewModel.users.last?.id, perPage: 20)
         }
     }
 }

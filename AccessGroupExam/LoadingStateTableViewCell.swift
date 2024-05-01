@@ -16,7 +16,7 @@ class LoadingStateTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setLoadingStaus(_ loadingStatus: LoadingStatus) {
+    func setLoadingStatus(_ loadingStatus: LoadingStatus) {
         switch loadingStatus {
         case .idle:
             loadingIndicator.stopAnimating()
