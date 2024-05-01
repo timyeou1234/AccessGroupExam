@@ -1,4 +1,4 @@
-#Github user app (Access Group Exam)
+# Github user app (Access Group Exam)
 
 ### App Explanation
 #### Structure
@@ -11,7 +11,7 @@ In this file, there are user list main page and user detail page. The UI nib fil
 ###### Modle
 This file contains struct model file.
 ###### API Client
-THis file contains Api related file.
+This file contains Api related file.
 
 ### Tech stack
 #### Libaries
