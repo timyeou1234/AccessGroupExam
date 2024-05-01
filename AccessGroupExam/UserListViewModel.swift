@@ -28,6 +28,10 @@ final class UserListViewModel {
                 self.status = value.count == perPage ? .hasMore : .noMore
                 if userId != nil {
                     self.users += value
+                    if self.users.count >= 100 {
+                        self.users = Array(self.users.prefix(100))
+                        self.status = .noMore
+                    }
                 } else {
                     self.users = value
                 }
