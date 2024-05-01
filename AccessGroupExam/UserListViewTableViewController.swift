@@ -7,20 +7,22 @@ class UserListViewTableViewController: UITableViewController {
     static let UserListTableViewCellIdentifier = "UserListTableViewCellIdentifier"
     static let LoadingStateTableViewCellIdentifier = "LoadingStateTableViewCellIdentifier"
     
-    private var viewModel = UserListViewModel(apiClient: APIClient.shared)
+    private var apiClient = APIClient.shared
     private var cancellables = Set<AnyCancellable>()
+    
+    private lazy var viewModel = UserListViewModel(apiClient: apiClient)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "UserListTableViewCell", bundle: nil), forCellReuseIdentifier: UserListViewTableViewController.UserListTableViewCellIdentifier)
         tableView.register(UINib(nibName: "LoadingStateTableViewCell", bundle: nil), forCellReuseIdentifier: UserListViewTableViewController.LoadingStateTableViewCellIdentifier)
-        bindingViewModel()
+        bindViewModel()
         // Get the first page of the users
         viewModel.getUserListFromGitHub(nil)
     }
     
-    private func bindingViewModel() {
+    private func bindViewModel() {
         Publishers.CombineLatest(viewModel.$status, viewModel.$users)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
@@ -75,5 +77,16 @@ extension UserListViewTableViewController {
         if indexPath.section == 1 && indexPath.row == 0 && viewModel.status == .hasMore {
             viewModel.getUserListFromGitHub(viewModel.users.last?.id, perPage: 20)
         }
+    }
+}
+
+extension UserListViewTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.section == 0 else {
+            return
+        }
+        let userName = viewModel.users[indexPath.row].login
+        let userDetailViewController = UserDetailViewController(userName: userName, apiClient: apiClient)
+        present(userDetailViewController, animated: true)
     }
 }

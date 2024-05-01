@@ -27,11 +27,11 @@
                                     <constraint firstAttribute="width" constant="40" id="x4S-eW-jLo"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="left" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KEJ-Xx-yrq">
-                                <rect key="frame" x="53" y="0.0" width="60" height="50"/>
+                            <stackView opaque="NO" contentMode="left" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="KEJ-Xx-yrq">
+                                <rect key="frame" x="53" y="0.0" width="296" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTj-cW-ugk">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="757" text="LabelAAAAA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTj-cW-ugk">
+                                        <rect key="frame" x="0.0" y="0.0" width="296" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -56,11 +56,17 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="mTj-cW-ugk" firstAttribute="leading" secondItem="KEJ-Xx-yrq" secondAttribute="leading" id="IZy-Mr-W7g"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mH0-wK-Dkx" secondAttribute="trailing" id="Om5-Gg-aUT"/>
+                                    <constraint firstAttribute="trailing" secondItem="mTj-cW-ugk" secondAttribute="trailing" id="bYh-Qs-cQZ"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WnD-9O-XT2" firstAttribute="leading" secondItem="bMU-Gp-Vpf" secondAttribute="leading" constant="5" id="9ha-Pw-dG8"/>
+                            <constraint firstAttribute="trailing" secondItem="KEJ-Xx-yrq" secondAttribute="trailing" constant="20" id="T23-71-lDE"/>
                             <constraint firstItem="KEJ-Xx-yrq" firstAttribute="top" secondItem="bMU-Gp-Vpf" secondAttribute="top" id="XBt-ZW-g8K"/>
                             <constraint firstItem="WnD-9O-XT2" firstAttribute="top" secondItem="bMU-Gp-Vpf" secondAttribute="top" constant="5" id="ZS3-fS-jQg"/>
                             <constraint firstAttribute="bottom" secondItem="WnD-9O-XT2" secondAttribute="bottom" constant="5" id="gVo-TJ-0AQ"/>

@@ -5,11 +5,11 @@ final class UserListViewModel {
     @Published var users: [User] = []
     @Published var status: LoadingStatus = .idle
     
-    var apiClient: APIClient
+    private var apiClient: APIClient
     
     private var cancellables: Set<AnyCancellable> = []
     
-    init(apiClient: APIClient = APIClient.shared) {
+    init(apiClient: APIClient) {
         self.apiClient = apiClient
     }
     

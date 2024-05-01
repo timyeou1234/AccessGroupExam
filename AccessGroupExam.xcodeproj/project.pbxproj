@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		62189C342BE239C20054007B /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62189C332BE239C20054007B /* UserDetail.swift */; };
+		62189C362BE2437F0054007B /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62189C352BE2437F0054007B /* UserDetailViewModel.swift */; };
+		62189C382BE244130054007B /* APIClient+getUserListFromGitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62189C372BE244130054007B /* APIClient+getUserListFromGitHub.swift */; };
+		62189C3A2BE244780054007B /* APIClient+getUserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62189C392BE244780054007B /* APIClient+getUserDetail.swift */; };
 		6282C3B42BE0914E00573B23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6282C3B32BE0914E00573B23 /* AppDelegate.swift */; };
 		6282C3B62BE0914E00573B23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6282C3B52BE0914E00573B23 /* SceneDelegate.swift */; };
 		6282C3B82BE0914E00573B23 /* UserListViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6282C3B72BE0914E00573B23 /* UserListViewTableViewController.swift */; };
@@ -32,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		62189C332BE239C20054007B /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		62189C352BE2437F0054007B /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		62189C372BE244130054007B /* APIClient+getUserListFromGitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+getUserListFromGitHub.swift"; sourceTree = "<group>"; };
+		62189C392BE244780054007B /* APIClient+getUserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+getUserDetail.swift"; sourceTree = "<group>"; };
 		6282C3B02BE0914E00573B23 /* AccessGroupExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccessGroupExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6282C3B32BE0914E00573B23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6282C3B52BE0914E00573B23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 				6282C3B52BE0914E00573B23 /* SceneDelegate.swift */,
 				6282C3B72BE0914E00573B23 /* UserListViewTableViewController.swift */,
 				6282C3E12BE229C400573B23 /* UserDetailViewController.swift */,
+				62189C352BE2437F0054007B /* UserDetailViewModel.swift */,
 				6282C3E22BE229C400573B23 /* UserDetailViewController.xib */,
 				6282C3DF2BE208E600573B23 /* UserListViewModel.swift */,
 				6282C3CD2BE0B7FC00573B23 /* User.swift */,
@@ -97,6 +104,8 @@
 				6282C3D72BE0DF1000573B23 /* LoadingStateTableViewCell.swift */,
 				6282C3DB2BE0E59700573B23 /* LoadingStatus.swift */,
 				6282C3DD2BE2061200573B23 /* APIClient.swift */,
+				62189C372BE244130054007B /* APIClient+getUserListFromGitHub.swift */,
+				62189C392BE244780054007B /* APIClient+getUserDetail.swift */,
 				6282C3D82BE0DF1000573B23 /* LoadingStateTableViewCell.xib */,
 				6282C3D02BE0BE7C00573B23 /* UserListTableViewCell.xib */,
 				6282C3B92BE0914E00573B23 /* Main.storyboard */,
@@ -193,15 +202,18 @@
 			files = (
 				6282C3D12BE0BE7C00573B23 /* UserListTableViewCell.swift in Sources */,
 				6282C3CE2BE0B7FC00573B23 /* User.swift in Sources */,
+				62189C3A2BE244780054007B /* APIClient+getUserDetail.swift in Sources */,
 				6282C3B82BE0914E00573B23 /* UserListViewTableViewController.swift in Sources */,
 				6282C3DE2BE2061300573B23 /* APIClient.swift in Sources */,
 				6282C3E02BE208E600573B23 /* UserListViewModel.swift in Sources */,
 				6282C3B42BE0914E00573B23 /* AppDelegate.swift in Sources */,
+				62189C362BE2437F0054007B /* UserDetailViewModel.swift in Sources */,
 				6282C3E42BE229C400573B23 /* UserDetailViewController.swift in Sources */,
 				6282C3D92BE0DF1000573B23 /* LoadingStateTableViewCell.swift in Sources */,
 				6282C3B62BE0914E00573B23 /* SceneDelegate.swift in Sources */,
 				6282C3DC2BE0E59700573B23 /* LoadingStatus.swift in Sources */,
 				62189C342BE239C20054007B /* UserDetail.swift in Sources */,
+				62189C382BE244130054007B /* APIClient+getUserListFromGitHub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
