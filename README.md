@@ -26,4 +26,4 @@ Native libraies:
 - Combine: This is to use the MVVM structure
 
 #### MVVM pattern
-In this app, for a quicker approach and for keep it simple, I didn't choose to use rxSwift. In ViewModel, I choose to let ViewModel hold on the publisher instead of using transform input output pattern for better readbility. 
+In this app, for a quicker approach and keep it simple, I didn't choose to use rxSwift but native combine instead. Combine in general is easier to understand while the function is natively support. In ViewModel, I choose to let ViewModel hold on the publisher instead of using transform input output pattern for better readbility. 
