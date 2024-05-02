@@ -3,7 +3,7 @@ import Combine
 import Kingfisher
 import UIKit
 
-class UserListViewTableViewController: UITableViewController {
+final class UserListViewTableViewController: UITableViewController {
     static let UserListTableViewCellIdentifier = "UserListTableViewCellIdentifier"
     static let LoadingStateTableViewCellIdentifier = "LoadingStateTableViewCellIdentifier"
     

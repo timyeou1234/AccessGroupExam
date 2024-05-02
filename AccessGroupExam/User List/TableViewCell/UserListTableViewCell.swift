@@ -1,7 +1,6 @@
 import UIKit
 
-class UserListTableViewCell: UITableViewCell {
-
+final class UserListTableViewCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView! {
         didSet {
             containerView.layer.shadowColor = UIColor.black.cgColor
@@ -25,8 +24,4 @@ class UserListTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var badgeLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 }

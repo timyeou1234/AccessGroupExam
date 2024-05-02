@@ -73,6 +73,4 @@ class UserDetailViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
-    
-    
 }

@@ -40,7 +40,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="loadingIndicator" destination="y0I-xn-SSD" id="1Dz-Ql-6hq"/>
-                <outlet property="loadingStatusLable" destination="G2m-nj-5Bo" id="yDT-Fw-tVO"/>
+                <outlet property="loadingStatusLabel" destination="G2m-nj-5Bo" id="yDT-Fw-tVO"/>
             </connections>
             <point key="canvasLocation" x="139" y="21"/>
         </tableViewCell>
